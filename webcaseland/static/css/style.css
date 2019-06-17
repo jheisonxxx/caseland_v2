@@ -1,0 +1,118 @@
+/*
+Author: jheison.talavera@gmail.com
+*/
+
+@font-face {
+    font-family: 'BigNoodle-Regular';
+    src: url('../fonts/BigNoodleTitling.eot');
+    src: url('../fonts/BigNoodleTitling.woff') format('woff'),
+    url('../fonts/BigNoodleTitling.ttf') format('truetype'),
+    url('../fonts/BigNoodleTitling.svg#LiberationSans-Regular') format('svg'),
+    url('../fonts/BigNoodleTitling.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*General CSS*/
+
+
+.header-caseland{
+    background-color: #000000;
+}
+.body-caseland{
+    background-color: #ffffff;
+}
+
+.title-body{
+    font-size: 20px;
+    font-family: "Arial Black";
+}
+
+
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropdown>.dropdown-toggle:active {
+  /*Without this, clicking will make it sticky*/
+    pointer-events: none;
+}
+
+.dropdown-toggle::after {
+    display:none;
+}
+
+.dropdown .btn{
+    background-color: transparent;
+    border-radius: 0;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+    border-right: 1px solid #07DBD0;
+
+}
+.category{
+    font-weight: bold;
+    font-family: "Arial Black";
+}
+
+.personalize{
+    border-radius: 56px 56px 56px 56px;
+    border: 1px solid #000000;
+}
+.designs{
+    border-radius: 56px 56px 56px 56px;
+    border: 1px solid #000000;
+}
+
+.corner-fan{
+    background-color: #E6E6E6;
+}
+
+.gifts{
+    background-color: #E6E6E6;
+}
+
+.description{
+
+}
+
+.price{
+    font-size: 24px;
+    font-family: "Arial Black";
+}
+
+.how-to-buy{
+    border-radius: 56px 56px 56px 56px;
+    background-color: #07DBD0;
+    color: white;
+    text-align: center;
+    font-family: "Arial Black";
+    width: 60%;
+}
+/* Portrait phones and smaller */
+@media (max-width: 575px) {
+
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767px) {
+
+}
+
+/*Small devices (landscape phones, 767px and down)*/
+@media (max-width: 767px) {
+
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991px) {
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}

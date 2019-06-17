@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="container detail-product py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{% static "img/taza.jpg" %}" alt="" width="100%" height="auto">
+        </div>
+        <div class="col-md-5">
+            <h4 class="mb-4">Cojin Cuadrado</h4>
+            <p>Detalle producto<br>
+            Detalle producto<br>
+                Detalle producto<br>
+                Detalle producto<br>
+            </p>
+            <div class="price pb-5">S./ 28.00</div>
+            <div class="how-to-buy mx-5 py-3">
+                COMO COMPRAR
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock %}
