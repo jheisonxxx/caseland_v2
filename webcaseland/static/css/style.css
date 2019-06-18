@@ -1,16 +1,8 @@
 /*
 Author: jheison.talavera@gmail.com
 */
-
-@font-face {
-    font-family: 'BigNoodle-Regular';
-    src: url('../fonts/BigNoodleTitling.eot');
-    src: url('../fonts/BigNoodleTitling.woff') format('woff'),
-    url('../fonts/BigNoodleTitling.ttf') format('truetype'),
-    url('../fonts/BigNoodleTitling.svg#LiberationSans-Regular') format('svg'),
-    url('../fonts/BigNoodleTitling.eot?#iefix') format('embedded-opentype');
-    font-weight: normal;
-    font-style: normal;
+body{
+    font-family: Arial, Helvetica, Verdana, serif;
 }
 
 /*General CSS*/
@@ -25,7 +17,6 @@ Author: jheison.talavera@gmail.com
 
 .title-body{
     font-size: 20px;
-    font-family: "Arial Black";
 }
 
 
@@ -53,7 +44,6 @@ Author: jheison.talavera@gmail.com
 }
 .category{
     font-weight: bold;
-    font-family: "Arial Black";
 }
 
 .personalize{
@@ -79,7 +69,7 @@ Author: jheison.talavera@gmail.com
 
 .price{
     font-size: 24px;
-    font-family: "Arial Black";
+
 }
 
 .how-to-buy{
@@ -87,9 +77,36 @@ Author: jheison.talavera@gmail.com
     background-color: #07DBD0;
     color: white;
     text-align: center;
-    font-family: "Arial Black";
     width: 60%;
 }
+
+#header{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-nav{
+    width: 100%;
+}
+.navbar-dark .navbar-nav .nav-item {
+    width: 14.2857142857%;
+}
+
+.navbar-dark .navbar-nav .nav-item:hover .nav-link{
+    background-color: #07DBD0;
+    color: #000000;
+}
+.navbar-dark .navbar-nav .nav-link {
+    border-right: solid #07DBD0 2px;
+    color: #ffffff;
+    font-weight: bold;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 0.8vw;
+    text-align: center;
+}
+
+
 /* Portrait phones and smaller */
 @media (max-width: 575px) {
 
