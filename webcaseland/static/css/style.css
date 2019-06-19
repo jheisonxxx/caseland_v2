@@ -85,6 +85,10 @@ body{
     padding-bottom: 0;
 }
 
+.icons-social img{
+    height: 50px;
+}
+
 .navbar-nav{
     width: 100%;
 }
@@ -92,10 +96,15 @@ body{
     width: 14.2857142857%;
 }
 
-.navbar-dark .navbar-nav .nav-item:hover .nav-link{
-    background-color: #07DBD0;
-    color: #000000;
+.navbar-dark .navbar-nav .nav-item:hover > .nav-link{
+    color: #000000 !important;
 }
+
+
+.navbar-dark .navbar-nav .nav-item:hover{
+    background-color: #07DBD0;
+}
+
 .navbar-dark .navbar-nav .nav-link {
     border-right: solid #07DBD0 2px;
     color: #ffffff;
@@ -104,8 +113,45 @@ body{
     padding-top: 20px;
     font-size: 0.8vw;
     text-align: center;
+    margin-bottom: 8px;
+    margin-top: 8px;
 }
 
+.footer-caseland{
+    background-color: #000000;
+    color: white;
+    font-size: 12px;
+}
+
+.footer-caseland img{
+    height: 50px;
+}
+.white-social{
+    position:absolute;
+   top:20px;
+   right:0;
+}
+
+.dropdown-item{
+    background-color: #07DBD0;
+     border-bottom: solid 1px white;
+}
+
+.dropdown-menu{
+    margin-top: 0;
+    padding: 0;
+
+}
+
+.navbar-toggler{
+    position:absolute;
+   top:0;
+   left:0;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(7,219,208)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
 
 /* Portrait phones and smaller */
 @media (max-width: 575px) {
@@ -120,6 +166,44 @@ body{
 /*Small devices (landscape phones, 767px and down)*/
 @media (max-width: 767px) {
 
+}
+
+@media (max-width: 992px) {
+    .navbar-dark .navbar-nav .nav-link{
+        border-right: none;
+
+    }
+
+    .container-header {
+        width: 100%;
+        max-width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+   }
+
+    .header-caseland{
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    #header {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .navbar-dark .navbar-nav .nav-item{
+        width: 100%;
+         border-top: solid 2px #07DBD0;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        text-align: left;
+        margin-left: 15px;
+        font-size: 12px;
+    }
+
+    .navbar-dark .navbar-nav .nav-item:hover >.nav-link {
+        background-color: #000000;
+    }
 }
 
 /*Medium devices (tablets, 768px and up)*/
