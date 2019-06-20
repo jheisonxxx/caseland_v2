@@ -1,26 +1,68 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
-<div class="container detail-product py-5">
-    <div class="row">
-        <div class="col-md-6">
-            <img src="{% static "img/taza.jpg" %}" alt="" width="100%" height="auto">
+    <div class="container detail-product py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static "img/taza.jpg" %}" alt="" width="100%" height="auto">
+            </div>
+            <div class="col-md-5">
+                <h4 class="mb-4">Cojin Cuadrado</h4>
+                <p>Detalle producto<br>
+                    Detalle producto<br>
+                    Detalle producto<br>
+                    Detalle producto<br>
+                </p>
+                <div class="price pb-5">S./ 28.00</div>
+
+                <button type="button" data-toggle="modal" class="how-to-buy mx-5 py-3" data-target="#exampleModal">
+                    COMO COMPRAR
+                </button>
+            </div>
         </div>
-        <div class="col-md-5">
-            <h4 class="mb-4">Cojin Cuadrado</h4>
-            <p>Detalle producto<br>
-            Detalle producto<br>
-                Detalle producto<br>
-                Detalle producto<br>
-            </p>
-            <div class="price pb-5">S./ 28.00</div>
-            <div class="how-to-buy mx-5 py-3">
-                COMO COMPRAR
+
+
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-right">
+                    <h5 class="modal-title"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <img height="40px" src="{% static "img/x.png" %}">
+                    </button>
+
+                </div>
+
+                <div class="modal-body py-0">
+                    <div class="row my-3 my-md-5 mx-sm-4">
+                        <div class="col-md-12 col-xs-12 text-center buy-web">Pronto podras realizar tus compras por nuestra
+                            web.
+                        </div>
+                    </div>
+                    <div class="row my-3 my-md-5 mx-sm-4">
+                        <div class="col-md-12 col-xs-12 text-center contact-web">Para realizar tu compra contactanos por nuestro
+                            facebook o wp.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 contact py-3">
+                            CONTACTAR
+                        </div>
+                        <div class="col-5 facebook">
+
+                        </div>
+                        <div class="col-5 whatsapp">
+
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
 
 
-</div>
 
 {% endblock %}

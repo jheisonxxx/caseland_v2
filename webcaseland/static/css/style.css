@@ -78,6 +78,7 @@ body{
     color: white;
     text-align: center;
     width: 60%;
+    text-decoration: none;
 }
 
 #header{
@@ -153,6 +154,33 @@ body{
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(7,219,208)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
+.contact{
+    background-color: #000000;
+    color: white;
+}
+.facebook{
+    background-color: #3b5998;
+}
+.whatsapp{
+    background-color: green;
+}
+
+.modal-content{
+    background-color: #bbcdd5;
+}
+.modal-header{
+    border-bottom: none;
+}
+
+.buy-web{
+    font-size: 40px;
+    font-weight: bold;
+}
+.contact-web{
+    font-size: 15px;
+    font-weight: bold;
+}
+
 /* Portrait phones and smaller */
 @media (max-width: 575px) {
 
@@ -201,9 +229,25 @@ body{
         font-size: 12px;
     }
 
-    .navbar-dark .navbar-nav .nav-item:hover >.nav-link {
+    .navbar-dark .navbar-nav .nav-item:hover {
         background-color: #000000;
     }
+
+    .navbar-dark .navbar-nav .nav-item:hover > .nav-link{
+        color: white !important;
+    }
+
+    .header-row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .col-header{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
 }
 
 /*Medium devices (tablets, 768px and up)*/
