@@ -8,104 +8,20 @@
         </div>
     </div>
     <div class="row mb-4">
-        <div class="col-md-3">
-            <img src="{% static "img/taza.jpg" %}" alt="" width="100%" height="auto">
-            <div class="category text-center my-2">
-                Tazas
+        {% for category in category_list %}
+            <div class="col-md-3">
+                <img src="{{ category.image.url }}" alt="" width="100%" height="auto">
+                <div class="category text-center my-2">
+                    {{ category.name }}
+                </div>
+                <div class="personalize text-center my-2 py-1 mx-4">
+                    <a href="{% url 'webcaseland:list_product' category.pk %}">Personalizar</a>
+                </div>
+                <div class="designs text-center my-2 mb-sm-5 py-1 mx-4">
+                    Diseños
+                </div>
             </div>
-            <div class="personalize text-center my-2 py-1 mx-4">
-                Personalizar
-            </div>
-            <div class="designs text-center my-2 mb-sm-5 py-1 mx-4">
-                Diseños
-            </div>
-        </div>
-        <div class="col-md-3">
-            <img src="{% static "img/taza.jpg" %}" alt="" width="100%" height="auto">
-            <div class="category text-center my-2">
-                Tazas
-            </div>
-            <div class="personalize text-center my-2 py-1 mx-4">
-                Personalizar
-            </div>
-            <div class="designs text-center my-2 mb-sm-5 py-1 mx-4">
-                Diseños
-            </div>
-        </div>
-        <div class="col-md-3">
-            <img src="{% static "img/taza.jpg" %}" alt="" width="100%" height="auto">
-            <div class="category text-center my-2">
-                Tazas
-            </div>
-            <div class="personalize text-center my-2 py-1 mx-4">
-                Personalizar
-            </div>
-            <div class="designs text-center my-2 py-1 mb-sm-5 mx-4">
-                Diseños
-            </div>
-        </div>
-        <div class="col-md-3">
-            <img src="{% static "img/taza.jpg" %}" alt="" width="100%" height="auto">
-            <div class="category text-center my-2">
-                Tazas
-            </div>
-            <div class="personalize text-center my-2 py-1 mx-4">
-                Personalizar
-            </div>
-            <div class="designs text-center my-2 py-1  mb-sm-5 mx-4">
-                Diseños
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3">
-            <img src="{% static "img/taza.jpg" %}" alt="" width="100%" height="auto">
-            <div class="category text-center my-2">
-                Tazas
-            </div>
-            <div class="personalize text-center my-2 py-1 mx-4">
-                Personalizar
-            </div>
-            <div class="designs text-center my-2 mb-sm-5 py-1 mx-4">
-                Diseños
-            </div>
-        </div>
-        <div class="col-md-3">
-            <img src="{% static "img/taza.jpg" %}" alt="" width="100%" height="auto">
-            <div class="category text-center my-2">
-                Tazas
-            </div>
-            <div class="personalize text-center my-2 py-1 mx-4">
-                Personalizar
-            </div>
-            <div class="designs text-center my-2 mb-sm-5 py-1 mx-4">
-                Diseños
-            </div>
-        </div>
-        <div class="col-md-3">
-            <img src="{% static "img/taza.jpg" %}" alt="" width="100%" height="auto">
-            <div class="category text-center my-2">
-                Tazas
-            </div>
-            <div class="personalize text-center my-2 py-1 mx-4">
-                Personalizar
-            </div>
-            <div class="designs text-center my-2 mb-sm-5 py-1 mx-4">
-                Diseños
-            </div>
-        </div>
-        <div class="col-md-3">
-            <img src="{% static "img/taza.jpg" %}" alt="" width="100%" height="auto">
-            <div class="category text-center my-2">
-                Tazas
-            </div>
-            <div class="personalize text-center my-2 mb-sm-5 py-1 mx-4">
-                Personalizar
-            </div>
-            <div class="designs text-center my-2 py-1 mx-4">
-                Diseños
-            </div>
-        </div>
+        {% endfor %}
     </div>
     <div class="row corner-fan my-4 px-5 pb-5 pt-4">
         <div class="row">

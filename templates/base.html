@@ -51,11 +51,25 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#speakers">COLECCIONES</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  COLECCIONES
+              </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Zona Friki</a>
+                  <a class="dropdown-item" href="#">Rincon del Hincha</a>
+                  <a class="dropdown-item" href="#">Regalos</a>
+                </div>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#place-time">POR PRODUCTO</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  POR PRODUCTO
+              </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    {% for category in category_list %}
+                        <a class="dropdown-item" href="{% url 'webcaseland:list_product' category.pk %}">{{ category.name }}</a>
+                    {% endfor %}
+                </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#conviertete-en-orador">ZONA FRIKI</a>
