@@ -46,9 +46,9 @@
               PERSONALIZAR
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
+                    {% for category in category_list %}
+                        <a class="dropdown-item" href="{% url 'webcaseland:list_product' category.pk %}">{{ category.name }}</a>
+                    {% endfor %}
             </div>
           </li>
             <li class="nav-item dropdown">
