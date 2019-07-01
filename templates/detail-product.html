@@ -8,7 +8,7 @@
             </div>
             <div class="col-md-5">
                 <h4 class="mb-4">{{ object.name }}</h4>
-                {{ object.description }}
+                {{ object.description | safe }}
                 <div class="price pb-5">S./ {{ object.price }}</div>
 
                 <button type="button" data-toggle="modal" class="how-to-buy mx-5 py-3" data-target="#exampleModal">

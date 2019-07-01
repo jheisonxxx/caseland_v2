@@ -4,7 +4,7 @@ from django.views.generic import DetailView, ListView
 
 
 # Create your views here.
-from webcaseland.models import Product, Category
+from webcaseland.models import Product, Category, SubCategory, CatalogProduct
 
 
 def home(request):
@@ -30,3 +30,20 @@ class ProductListView(ListView):
     def get_queryset(self):
         self.category = get_object_or_404(Category, id=self.args[0])
         return Product.objects.filter(category=self.category, visible=True)
+
+
+class SubCategoryListView(ListView):
+    model = Category
+    template_name = 'subcategory-product.html'
+
+    def get_queryset(self):
+        self.category = get_object_or_404(Category, id=self.args[0])
+        return SubCategory.objects.filter(category=self.category, visible=True)
+
+class CatalogProductListView(ListView):
+    model = SubCategory
+    template_name = 'product.html'
+
+    def get_queryset(self):
+        self.subcategory = get_object_or_404(SubCategory, id=self.args[0])
+        return CatalogProduct.objects.filter(subcategory=self.subcategory, visible=True)

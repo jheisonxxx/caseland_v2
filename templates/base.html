@@ -67,7 +67,7 @@
               </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     {% for category in category_list %}
-                        <a class="dropdown-item" href="{% url 'webcaseland:list_product' category.pk %}">{{ category.name }}</a>
+                        <a class="dropdown-item" href="{% url 'webcaseland:list_subcategory' category.pk %}">{{ category.name }}</a>
                     {% endfor %}
                 </div>
             </li>
