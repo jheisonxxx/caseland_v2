@@ -10,9 +10,9 @@ from webcaseland.models import Product, Category, SubCategory, CatalogProduct
 def home(request):
     categories = Category.objects.filter(visible=True).exclude(name__iexact='Rincon del Hincha')\
         .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').order_by('order')
-    corner_fan = Product.objects.filter(visible=True, name__iexact='Rincon del Hincha').order_by('order')
-    zona_friki = Product.objects.filter(visible=True, name__iexact='Zona friki').order_by('order')
-    gifts = Product.objects.filter(visible=True, name__iexact='Regalos').order_by('order')
+    corner_fan = Product.objects.filter(visible=True, category__name__iexact='Rincon del Hincha').order_by('order')
+    zona_friki = Product.objects.filter(visible=True, category__name__iexact='Zona friki').order_by('order')
+    gifts = Product.objects.filter(visible=True, category__name__iexact='Regalos').order_by('order')
 
     collections = Category.objects.filter(Q(visible=True) & (Q(name__iexact='Rincon del Hincha') | Q(name__iexact='Regalos') | Q(name__iexact='Zona friki')))
     # models = ModelPhone.objects.filter(visible=True).order_by('brand__order','order')
