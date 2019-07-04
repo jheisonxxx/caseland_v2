@@ -33,7 +33,7 @@
             <div class="row px-3">
                 {% for corner in cornerfan_list %}
                     <div class="col-md-3 col-6">
-                        <img src="{{ corner.image.url }}" alt="" width="100%" height="auto">
+                        <a href="{% url 'webcaseland:list_catalog_product' corner.pk %}"><img src="{{ corner.image.url }}" alt="" width="100%" height="auto"></a>
                     </div>
                 {% endfor %}
             </div>
@@ -49,7 +49,7 @@
             <div class="row">
                 {% for friki in friki_list %}
                     <div class="col-md-3 col-6">
-                        <img src="{{ friki.image.url }}" alt="" width="100%" height="auto">
+                        <a href="{% url 'webcaseland:list_catalog_product' friki.pk %}"><img src="{{ friki.image.url }}" alt="" width="100%" height="auto"></a>
                     </div>
                 {% endfor %}
             </div>
@@ -65,7 +65,7 @@
             <div class="row">
                 {% for gift in gift_list %}
                     <div class="col-md-3 col-6">
-                        <img src="{{ gift.image.url }}" alt="" width="100%" height="auto">
+                        <a href="{% url 'webcaseland:list_catalog_product' gift.pk %}"><img src="{{ gift.image.url }}" alt="" width="100%" height="auto"></a>
                     </div>
                 {% endfor %}
             </div>

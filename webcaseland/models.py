@@ -86,8 +86,8 @@ class CatalogProduct(models.Model):
 
 
     class Meta:
-        verbose_name = "Catalogo Producto"
-        verbose_name_plural = "Catalogo Productos"
+        verbose_name = "Producto de Catalogo o Colección"
+        verbose_name_plural = "Productos de Catalogo o Colecciones"
 
     def __str__(self):
         return self.name
