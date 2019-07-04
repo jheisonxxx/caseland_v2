@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="container body-product py-5">
+    <div class="row mb-4">
+        {% for object in object_list %}
+            <div class="col-md-4">
+                <a href="{% url 'webcaseland:catalog_product_detail' object.pk %}">
+                    <img src="{{ object.image.url }}" alt="" width="100%" height="auto">
+                    <div class="category my-3">
+                        {{ object.name }}
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -24,6 +24,10 @@ class ProductDetailView(DetailView):
     model = Product
     template_name = 'detail-product.html'
 
+class CatalogProductDetailView(DetailView):
+    model = CatalogProduct
+    template_name = 'detail-product.html'
+
 
 class ProductListView(ListView):
     model = Category
@@ -44,7 +48,7 @@ class SubCategoryListView(ListView):
 
 class CatalogProductListView(ListView):
     model = SubCategory
-    template_name = 'product.html'
+    template_name = 'catalog-product.html'
 
     def get_queryset(self):
         self.subcategory = get_object_or_404(SubCategory, id=self.args[0])
