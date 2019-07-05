@@ -3,17 +3,19 @@ Author: jheison.talavera@gmail.com
 */
 body{
     font-family: Arial, Helvetica, Verdana, serif;
+    background-color: #E6E6E6;
 }
 
 /*General CSS*/
 
+.body-caseland a{
+    color: black;
+}
 
 .header-caseland{
     background-color: #000000;
 }
-.body-caseland{
-    background-color: #ffffff;
-}
+
 
 .title-body{
     font-size: 20px;
@@ -56,11 +58,11 @@ body{
 }
 
 .corner-fan{
-    background-color: #E6E6E6;
+    background-color: #FFF;
 }
 
 .gifts{
-    background-color: #E6E6E6;
+    background-color: #FFF;
 }
 
 .description{
