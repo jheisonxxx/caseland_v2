@@ -46,11 +46,17 @@ body{
 }
 
 .category{
+    border-left: 20px solid #E6E6E6;
+    border-right: 20px solid #E6E6E6;
+}
+
+.category:nth-child(1n){
+    border-left: none;
     border-right: 20px solid #E6E6E6;
 }
 
 .category:nth-child(4n){
-    border-right: none;
+    border-left: none
 }
 
 .name-category{
