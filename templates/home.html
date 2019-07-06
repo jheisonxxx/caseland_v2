@@ -9,7 +9,7 @@
     </div>
     <div class="row mb-4">
         {% for category in category_list %}
-            <div class="col-md-3 category bg-white px-0 mb-4">
+            <div class="col-md-3 category bg-white px-0 mb-5">
                 <img src="{{ category.image.url }}" alt="" width="100%" height="auto">
                 <div class="name-category text-center my-2">
                     {{ category.name }}
@@ -17,7 +17,7 @@
                 <div class="personalize text-center my-2 py-1 mx-4">
                     <a href="{% url 'webcaseland:list_product' category.pk %}">Personalizar</a>
                 </div>
-                <div class="designs text-center my-2 mb-sm-5 py-1 mx-4">
+                <div class="designs text-center my-2 mb-sm-3 py-1 mx-4">
                     <a href="{% url 'webcaseland:list_subcategory' category.pk %}">Diseños</a>
                 </div>
             </div>
