@@ -8,7 +8,7 @@ body{
 
 /*General CSS*/
 
-.body-caseland a{
+.body-caseland a,.body-product a{
     color: black;
 }
 
@@ -64,10 +64,12 @@ body{
 }
 
 .personalize{
+    font-size: 0.7rem;
     border-radius: 56px 56px 56px 56px;
     border: 1px solid #000000;
 }
 .designs{
+    font-size: 0.7rem;
     border-radius: 56px 56px 56px 56px;
     border: 1px solid #000000;
 }
