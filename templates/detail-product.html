@@ -10,7 +10,7 @@
             <div class="col-md-5 pt-3 pt-sm-3 pt-md-0">
                 <h4 class="mb-4">{{ object.name }}</h4>
                 {{ object.description | safe }}
-                <div class="price">S/. {{ object.price|floatformat:2|unlocalize  }}</div>
+                <div class="price">S/. {{ object.price|floatformat:2  }}</div>
                 <div class="price-text pb-5">precio</div>
 
                 <a href="#" data-toggle="modal" class="how-to-buy py-3 px-5" data-target="#exampleModal">
@@ -49,10 +49,14 @@
                             CONTACTAR
                         </div>
                         <div class="col-5 offset-md-3 col-md-3 facebook px-0 text-center">
-                            <img src="{% static "img/iconfb.png" %}" alt="" height="60px">
+                            <a href="https://www.facebook.com/Caselandpe-122846441810069">
+                                <img src="{% static "img/iconfb.png" %}" alt="" height="50px">
+                            </a>
                         </div>
                         <div class="col-5 whatsapp px-0 text-center col-md-3 ">
-                            <img src="{% static "img/iconwa.png" %}" alt="" height="60px">
+                            <a href="https://api.whatsapp.com/send?phone=51910101718">
+                                <img src="{% static "img/iconwa.png" %}" alt="" height="50px">
+                            </a>
                         </div>
                     </div>
 

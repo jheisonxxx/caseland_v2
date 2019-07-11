@@ -197,23 +197,23 @@ body{
 .contact{
     background-color: #000000;
     color: white;
-    height: 90px;
-    line-height: 90px;
+    height: 70px;
+    line-height: 70px;
 }
 .facebook{
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
     background-color: #3b5998;
 }
 .whatsapp{
-    padding-bottom: 10px;
-    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
     background-color: green;
 }
 
 .row-contact{
     margin-bottom: 30px;
-    height: 90px;
+    height: 70px;
 }
 
 .modal-content{
