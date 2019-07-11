@@ -56,7 +56,7 @@ class Product(models.Model):
     order = models.PositiveIntegerField(verbose_name='orden', blank=False, default=1)
     visible = models.BooleanField(verbose_name='visible', blank=False, default=True)
     category = models.ForeignKey(Category,verbose_name='categoria')
-    price = models.FloatField(verbose_name='precio', blank=False, default=0)
+    price = models.DecimalField(verbose_name='precio', blank=False, default=0, decimal_places=2, max_digits=10)
 
 
     class Meta:
@@ -82,7 +82,7 @@ class CatalogProduct(models.Model):
     order = models.PositiveIntegerField(verbose_name='orden', blank=False, default=1)
     visible = models.BooleanField(verbose_name='visible', blank=False, default=True)
     subcategory = models.ForeignKey(SubCategory,verbose_name='subcategoria')
-    price = models.FloatField(verbose_name='precio', blank=False, default=0)
+    price = models.DecimalField(verbose_name='precio', blank=False, default=0, decimal_places=2,max_digits=10)
 
 
     class Meta:

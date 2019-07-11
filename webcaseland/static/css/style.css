@@ -89,15 +89,25 @@ body{
 
 .price{
     font-size: 24px;
-
+    font-weight: bold;
+}
+.price-text{
+    color: #727376;
+    line-height: 0;
 }
 
 .how-to-buy{
     border-radius: 56px 56px 56px 56px;
-    background-color: #07DBD0;
+    background-color: #04B7AF;
     color: white;
     text-align: center;
     width: 60%;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.how-to-buy:hover{
+    color: white;
     text-decoration: none;
 }
 
@@ -187,16 +197,28 @@ body{
 .contact{
     background-color: #000000;
     color: white;
+    height: 90px;
+    line-height: 90px;
 }
 .facebook{
+    padding-bottom: 10px;
+    padding-top: 10px;
     background-color: #3b5998;
 }
 .whatsapp{
+    padding-bottom: 10px;
+    padding-top: 10px;
     background-color: green;
 }
 
+.row-contact{
+    margin-bottom: 30px;
+    height: 90px;
+}
+
 .modal-content{
-    background-color: #bbcdd5;
+    background-color: #E6E7E8;
+    border: none;
 }
 .modal-header{
     border-bottom: none;
@@ -231,6 +253,9 @@ body{
 /*Small devices (landscape phones, 767px and down)*/
 @media (max-width: 767px) {
 
+    .how-to-buy{
+        margin-left: 30%;
+    }
 }
 
 @media (max-width: 992px) {
@@ -284,7 +309,29 @@ body{
         padding-right: 0;
     }
 
-
+    .contact{
+        font-size: 0.6rem;
+        height: 60px;
+        line-height: 60px;
+    }
+    .row-contact{
+        margin-bottom: 0;
+        height: 50px;
+    }
+    .facebook{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .facebook img{
+        height: 40px;
+    }
+    .whatsapp{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .whatsapp img{
+        height: 40px;
+    }
 }
 
 /*Medium devices (tablets, 768px and up)*/
