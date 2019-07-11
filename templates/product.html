@@ -1,10 +1,14 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
+    <div class="bar-personalize px-5 py-3">
+        PERSONALIZAR
+    </div>
 <div class="container body-product py-5">
+
     <div class="row mb-4">
         {% for object in object_list %}
-            <div class="col-md-4 category">
+            <div class="col-md-4 category col-6">
                 <a href="{% url 'webcaseland:product_detail' object.pk %}">
                     <img src="{{ object.image.url }}" alt="" width="100%" height="auto">
                     <div class="my-3">

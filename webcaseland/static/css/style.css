@@ -233,6 +233,14 @@ body{
     font-weight: bold;
 }
 
+.bar-personalize{
+    width: 100%;
+    background-color: #04B7AF;
+    color: white;
+    display: none;
+    font-weight: bold;
+}
+
 /* Some Extra Classes */
 .margin-logo{
     margin-bottom: 2.5rem!important;
@@ -242,19 +250,31 @@ body{
 .navbar{padding-top: 0}
 /* Portrait phones and smaller */
 @media (max-width: 575px) {
-
+    .white-social img{
+        height: 30px;
+    }
+    .margin-logo{
+        height: 40px;
+    }
+    .category{
+        border-left: 20px solid #E6E6E6 !important;
+    }
+    .bar-personalize{
+        display: block;
+    }
 }
 
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) and (max-width: 767px) {
-
-}
-
-/*Small devices (landscape phones, 767px and down)*/
-@media (max-width: 767px) {
-
-    .how-to-buy{
+     .how-to-buy{
         margin-left: 30%;
+    }
+
+    .white-social img{
+        height: 40px;
+    }
+    .margin-logo{
+        height: 45px;
     }
 }
 
