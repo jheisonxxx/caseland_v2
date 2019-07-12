@@ -9,16 +9,27 @@ from webcaseland.models import Product, Category, SubCategory, CatalogProduct
 
 def home(request):
     categories = Category.objects.filter(visible=True).exclude(name__iexact='Rincon del Hincha')\
-        .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').order_by('order')
+        .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').exclude(name__iexact='Promociones').order_by('order')
     corner_fan = SubCategory.objects.filter(visible=True, category__name__iexact='Rincon del Hincha').order_by('order')
     zona_friki = SubCategory.objects.filter(visible=True, category__name__iexact='Zona friki').order_by('order')
     gifts = SubCategory.objects.filter(visible=True, category__name__iexact='Regalos').order_by('order')
 
     collections = Category.objects.filter(Q(visible=True) & (Q(name__iexact='Rincon del Hincha') | Q(name__iexact='Regalos') | Q(name__iexact='Zona friki')))
+
+    category_fan = Category.objects.filter(name__iexact='Rincon del Hincha').first()
+    category_friki = Category.objects.filter(name__iexact='Zona friki').first()
+    category_gift = Category.objects.filter(name__iexact='Regalos').first()
+    category_promotion = Category.objects.filter(name__iexact='Promociones').first()
+
+
     # models = ModelPhone.objects.filter(visible=True).order_by('brand__order','order')
     # slides = Slide.objects.filter(visible=True)
-    return render_to_response('home.html', {'category_list': categories, 'cornerfan_list': corner_fan,
-                              'gift_list': gifts ,'friki_list': zona_friki, 'collections': collections})
+
+    return render_to_response('home.html', {'categories': categories, 'collections': collections,
+                                            'cornerfan_list':corner_fan, 'friki_list': zona_friki,
+                                            'gift_list': gifts,
+                                            'category_fan': category_fan, 'category_friki': category_friki,
+                                            'category_gift': category_gift, 'category_promotion': category_promotion })
 
 class ProductDetailView(DetailView):
     model = Product
@@ -27,10 +38,16 @@ class ProductDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ProductDetailView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.filter(visible=True).exclude(name__iexact='Rincon del Hincha') \
-            .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').order_by('order')
+            .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').exclude(name__iexact='Promociones').order_by('order')
         context['collections'] = Category.objects.filter(Q(visible=True) & (Q(name__iexact='Rincon del Hincha') |
                                                                             Q(name__iexact='Regalos') |
                                                                             Q(name__iexact='Zona friki')))
+
+        context['category_fan']= Category.objects.filter(name__iexact='Rincon del Hincha').first()
+        context['category_friki'] = Category.objects.filter(name__iexact='Zona friki').first()
+        context['category_gift'] =Category.objects.filter(name__iexact='Regalos').first()
+        context['category_promotion'] = Category.objects.filter(name__iexact='Promociones').first()
+
         return context
 
 class CatalogProductDetailView(DetailView):
@@ -40,10 +57,15 @@ class CatalogProductDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super(CatalogProductDetailView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.filter(visible=True).exclude(name__iexact='Rincon del Hincha') \
-            .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').order_by('order')
+            .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').exclude(name__iexact='Promociones').order_by('order')
         context['collections'] = Category.objects.filter(Q(visible=True) & (Q(name__iexact='Rincon del Hincha') |
                                                                             Q(name__iexact='Regalos') |
                                                                             Q(name__iexact='Zona friki')))
+        context['category_fan'] = Category.objects.filter(name__iexact='Rincon del Hincha').first()
+        context['category_friki'] = Category.objects.filter(name__iexact='Zona friki').first()
+        context['category_gift'] = Category.objects.filter(name__iexact='Regalos').first()
+        context['category_promotion'] = Category.objects.filter(name__iexact='Promociones').first()
+
         return context
 
 
@@ -58,10 +80,16 @@ class ProductListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(ProductListView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.filter(visible=True).exclude(name__iexact='Rincon del Hincha') \
-            .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').order_by('order')
+            .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').exclude(name__iexact='Promociones').order_by('order')
         context['collections'] = Category.objects.filter(Q(visible=True) & (Q(name__iexact='Rincon del Hincha') |
                                                                             Q(name__iexact='Regalos') |
                                                                             Q(name__iexact='Zona friki')))
+
+        context['category_fan'] = Category.objects.filter(name__iexact='Rincon del Hincha').first()
+        context['category_friki'] = Category.objects.filter(name__iexact='Zona friki').first()
+        context['category_gift'] = Category.objects.filter(name__iexact='Regalos').first()
+        context['category_promotion'] = Category.objects.filter(name__iexact='Promociones').first()
+
         return context
 
 
@@ -76,10 +104,16 @@ class SubCategoryListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(SubCategoryListView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.filter(visible=True).exclude(name__iexact='Rincon del Hincha') \
-            .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').order_by('order')
+            .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').exclude(name__iexact='Promociones').order_by('order')
         context['collections'] = Category.objects.filter(Q(visible=True) & (Q(name__iexact='Rincon del Hincha') |
                                                                             Q(name__iexact='Regalos') |
                                                                             Q(name__iexact='Zona friki')))
+
+        context['category_fan'] = Category.objects.filter(name__iexact='Rincon del Hincha').first()
+        context['category_friki'] = Category.objects.filter(name__iexact='Zona friki').first()
+        context['category_gift'] = Category.objects.filter(name__iexact='Regalos').first()
+        context['category_promotion'] = Category.objects.filter(name__iexact='Promociones').first()
+
         return context
 
 class CatalogProductListView(ListView):
@@ -93,8 +127,14 @@ class CatalogProductListView(ListView):
     def get_context_data(self, **kwargs):
         context = super(CatalogProductListView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.filter(visible=True).exclude(name__iexact='Rincon del Hincha') \
-            .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').order_by('order')
+            .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').exclude(name__iexact='Promociones').order_by('order')
         context['collections'] = Category.objects.filter(Q(visible=True) & (Q(name__iexact='Rincon del Hincha') |
                                                                             Q(name__iexact='Regalos') |
                                                                             Q(name__iexact='Zona friki')))
+
+        context['category_fan'] = Category.objects.filter(name__iexact='Rincon del Hincha').first()
+        context['category_friki'] = Category.objects.filter(name__iexact='Zona friki').first()
+        context['category_gift'] = Category.objects.filter(name__iexact='Regalos').first()
+        context['category_promotion'] = Category.objects.filter(name__iexact='Promociones').first()
+
         return context
