@@ -1,6 +1,15 @@
 /*
 Author: jheison.talavera@gmail.com
 */
+
+@font-face {
+    font-family: 'Arial Black';
+    src: url('../fonts/arial-black.woff') format('woff'),
+    url('../fonts/arial-black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body{
     font-family: Arial, Helvetica, Verdana, serif;
     background-color: #E6E6E6;
@@ -21,9 +30,11 @@ body{
     font-size: 20px;
 }
 
-
+.dropdown{
+    display: list-item;
+}
 .dropdown:hover>.dropdown-menu {
-  display: block;
+    display: block;
 }
 
 .dropdown>.dropdown-toggle:active {
@@ -46,31 +57,32 @@ body{
 }
 
 .category{
-    border-left: 20px solid #E6E6E6;
-    border-right: 20px solid #E6E6E6;
+    border-left: 10px solid #E6E6E6;
+    border-right: 10px solid #E6E6E6;
 }
 
 .category:nth-child(1n){
     border-left: none;
-    border-right: 20px solid #E6E6E6;
+    border-right: 10px solid #E6E6E6;
 }
 
 .category:nth-child(4n){
-    border-left: none
+    border-left: 10px solid #E6E6E6;
+    border-right: none;
 }
 
 .name-category{
-    font-weight: bold;
-    font-size: 0.7rem;
+    font-family: "Arial Black", arial, Helvetica, serif;
+    font-size: 1.1rem;
 }
 
 .personalize{
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     border-radius: 56px 56px 56px 56px;
     border: 1px solid #000000;
 }
 .designs{
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     border-radius: 56px 56px 56px 56px;
     border: 1px solid #000000;
 }
@@ -79,8 +91,20 @@ body{
     background-color: #FFF;
 }
 
+.corner-fan h4{
+    font-weight: bold;
+}
+
 .gifts{
     background-color: #FFF;
+}
+
+.gifts h4{
+    font-weight: bold;
+}
+
+.geek-zone h4{
+    font-weight: bold;
 }
 
 .description{
@@ -125,8 +149,8 @@ body{
 }
 .navbar-dark .navbar-nav .nav-item {
     width: 14.2857142857%;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
 .navbar-dark .navbar-nav .nav-item:hover > .nav-link{
@@ -152,7 +176,7 @@ body{
     font-weight: bold;
     padding-bottom: 5px;
     padding-top: 5px;
-    font-size: 0.7vw;
+    font-size: 0.8vw;
     text-align: center;
     margin-bottom: 8px;
     margin-top: 8px;
@@ -200,12 +224,12 @@ body{
     height: 70px;
     line-height: 70px;
 }
-.facebook{
+.row-contact .facebook{
     padding-bottom: 15px;
     padding-top: 15px;
     background-color: #3b5998;
 }
-.whatsapp{
+.row-contact .whatsapp{
     padding-bottom: 15px;
     padding-top: 15px;
     background-color: green;
@@ -214,6 +238,10 @@ body{
 .row-contact{
     margin-bottom: 30px;
     height: 70px;
+}
+
+.row-floating{
+    display: none;
 }
 
 .modal-content{
@@ -241,6 +269,14 @@ body{
     font-weight: bold;
 }
 
+#header .dropdown-item{
+    font-size: 0.8rem;
+    padding-top: .9rem;
+    padding-bottom: .9rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
 /* Some Extra Classes */
 .margin-logo{
     margin-bottom: 2.5rem!important;
@@ -248,6 +284,17 @@ body{
 }
 
 .navbar{padding-top: 0}
+
+.catalog .catalog-name{
+    font-size: 1rem;
+}
+
+.catalog .catalog-price{
+    font-size: 1.2rem;
+    color: #0BABA3;
+    font-family: "Arial Black", arial-black;
+}
+
 /* Portrait phones and smaller */
 @media (max-width: 575px) {
     .white-social img{
@@ -257,10 +304,19 @@ body{
         height: 40px;
     }
     .category{
-        border-left: 20px solid #E6E6E6 !important;
+        border-left: 10px solid #E6E6E6 !important;
+        padding-left: .25rem;
+        padding-right: .25rem;
     }
     .bar-personalize{
         display: block;
+    }
+    .catalog{
+        padding-left: .25rem;
+        padding-right: .25rem;
+    }
+    .navbar-dark .navbar-nav .nav-item:nth-child(7),.nav-item:nth-child(6),.nav-item:nth-child(5),.nav-item:nth-child(4){
+        display: none;
     }
 }
 
@@ -334,22 +390,31 @@ body{
         height: 60px;
         line-height: 60px;
     }
+
     .row-contact{
-        margin-bottom: 0;
-        height: 50px;
+        display: none;
     }
-    .facebook{
+    .row-floating{
+        margin-bottom: 0;
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+    .row-floating .facebook{
         padding-top: 10px;
         padding-bottom: 10px;
+         background-color: #3b5998;
     }
-    .facebook img{
+    .row-floating .facebook img{
         height: 40px;
     }
-    .whatsapp{
+    .row-floating .whatsapp{
         padding-top: 10px;
         padding-bottom: 10px;
+        background-color: green;
     }
-    .whatsapp img{
+    .row-floating .whatsapp img{
         height: 40px;
     }
 }

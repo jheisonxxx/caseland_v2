@@ -26,7 +26,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 </nav>
-                <img class="margin-logo" src="{% static "img/logo.png" %}" alt="" height="55px">
+                <a href="{% url 'webcaseland:home' %}"><img class="margin-logo" src="{% static "img/logo.png" %}" alt="" height="45px"></a>
                 <div class="white-social">
                     <a href="https://api.whatsapp.com/send?phone=51910101718"><img src="{% static "img/wtblanco.png" %}" alt=""></a>
                     <a href="https://www.facebook.com/Caselandpe-122846441810069"><img src="{% static "img/fbblanco.png" %}" alt=""></a>
@@ -35,8 +35,8 @@
             </div>
         </div>
         <div class="row header-row">
-            <div class="col-md-12 col-header">
-                <nav id="header" class="navbar navbar-expand-lg navbar-dark sticky-top">
+            <div class="col-md-12 col-header px-0">
+                <nav id="header" class="navbar navbar-expand-lg navbar-dark sticky-top px-0">
 
 
         <div class="collapse navbar-collapse" id="navbar">
@@ -108,5 +108,16 @@
             </div>
         </div>
     </div>
+</div>
+<div class="row mx-0 row-floating">
+    <div class="col-2 d-md-none d-lg-none d-xl-none contact px-0 text-center">
+        CONTACTAR
+    </div>
+    <a href="https://www.facebook.com/Caselandpe-122846441810069" class="col-5 offset-md-3 col-md-3 facebook px-0 text-center">
+        <img src="{% static "img/iconfb.png" %}" alt="" height="50px">
+    </a>
+    <a href="https://api.whatsapp.com/send?phone=51910101718" class="col-5 whatsapp px-0 text-center col-md-3 ">
+        <img src="{% static "img/iconwa.png" %}" alt="" height="50px">
+    </a>
 </div>
 </body>

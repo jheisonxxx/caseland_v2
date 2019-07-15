@@ -8,14 +8,14 @@
 
     <div class="row mb-4">
         {% for object in object_list %}
-            <div class="col-md-4 category col-6">
-                <a href="{% url 'webcaseland:product_detail' object.pk %}">
+            <a href="{% url 'webcaseland:product_detail' object.pk %}" class="col-md-4 category col-6">
+
                     <img src="{{ object.image.url }}" alt="" width="100%" height="auto">
-                    <div class="my-3">
+                    <div class="my-3 name-category">
                         {{ object.name }}
                     </div>
-                </a>
-            </div>
+            </a>
+
         {% endfor %}
     </div>
 </div>

@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load l10n %}
 {% block content %}
 <div class="container body-product py-5">
     <div class="row mb-4">
         {% for object in object_list %}
-            <div class="col-md-4">
-                <a href="{% url 'webcaseland:catalog_product_detail' object.pk %}">
+            <a href="{% url 'webcaseland:catalog_product_detail' object.pk %}" class="col-md-3 col-6 catalog">
                     <img src="{{ object.image.url }}" alt="" width="100%" height="auto">
-                    <div class="category my-3">
+                    <div class="catalog-name text-left mt-1">
                         {{ object.name }}
                     </div>
-                </a>
-            </div>
+                    <div class="catalog-price mb-3 text-right">
+                            s/.{{ object.price|floatformat:2 }}
+                    </div>
+            </a>
         {% endfor %}
     </div>
 </div>

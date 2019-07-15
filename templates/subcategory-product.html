@@ -4,14 +4,12 @@
 <div class="container body-product py-5">
     <div class="row mb-4">
         {% for object in object_list %}
-            <div class="col-md-4">
-                <a href="{% url 'webcaseland:list_catalog_product' object.pk %}">
+            <a href="{% url 'webcaseland:list_catalog_product' object.pk %}"class="col-md-4 col-6 category">
                     <img src="{{ object.image.url }}" alt="" width="100%" height="auto">
-                    <div class="category my-3">
+                    <div class="name-category my-3">
                         {{ object.name }}
                     </div>
-                </a>
-            </div>
+            </a>
         {% endfor %}
     </div>
 </div>
