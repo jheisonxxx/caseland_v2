@@ -56,35 +56,67 @@ body{
 
 }
 
-.category{
-    border-left: 10px solid #E6E6E6;
-    border-right: 10px solid #E6E6E6;
+.category:hover {
+    text-decoration: none;
+    box-shadow: -2px 3px 18px rgba(0, 0, 0, .3);
+    -webkit-transform: scale(1.025);
+    transform: scale(1.025);
+    transition-duration: 0.5s;
 }
 
+.category{
+    /*padding-left: 1rem;*/
+    /*padding-right: 1rem;*/
+}
+
+.body-caseland .category img{
+    margin-top: 0;
+}
+
+.category img{
+    margin-top: 1rem;
+}
 .category:nth-child(1n){
-    border-left: none;
-    border-right: 10px solid #E6E6E6;
+    /*padding-left: 0;*/
+    /*padding-right: 1rem;*/
 }
 
 .category:nth-child(4n){
-    border-left: 10px solid #E6E6E6;
-    border-right: none;
+    /*padding-left: 1rem;*/
+    /*padding-right: 0;*/
 }
 
 .name-category{
-    font-family: "Arial Black", arial, Helvetica, serif;
+    font-family: arial, Helvetica, serif;
     font-size: 1.1rem;
+    font-weight: bold;
 }
 
 .personalize{
+    display: block;
     font-size: 0.9rem;
     border-radius: 56px 56px 56px 56px;
     border: 1px solid #000000;
 }
+
+.personalize:hover{
+    background-color: #04B7AF;
+    color: white;
+    text-decoration: none;
+}
+
+
 .designs{
+    display: block;
     font-size: 0.9rem;
     border-radius: 56px 56px 56px 56px;
     border: 1px solid #000000;
+}
+
+.designs:hover{
+    background-color: #04B7AF;
+    color: white;
+    text-decoration: none;
 }
 
 .corner-fan{
@@ -295,6 +327,40 @@ body{
     font-family: "Arial Black", arial-black;
 }
 
+@media (max-width: 768px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+.carousel-control-prev {
+  margin-left: -25px;
+}
+
+.carousel-control-next {
+  margin-right: -25px;
+}
+
+
+@media (max-width: 768px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+
 /* Portrait phones and smaller */
 @media (max-width: 575px) {
     .white-social img{
@@ -304,9 +370,9 @@ body{
         height: 40px;
     }
     .category{
-        border-left: 10px solid #E6E6E6 !important;
-        padding-left: .25rem;
-        padding-right: .25rem;
+        padding-left: .5rem;
+        padding-right: .5rem;
+
     }
     .bar-personalize{
         display: block;
