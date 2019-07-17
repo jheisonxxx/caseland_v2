@@ -73,7 +73,7 @@ body{
     margin-top: 0;
 }
 
-.category img{
+.category img, .catalog img{
     margin-top: 1rem;
 }
 .category:nth-child(1n){
