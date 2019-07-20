@@ -358,6 +358,16 @@ body{
     /*height: 50vh;*/
 }
 
+.bx-viewport, .bx-wrapper{
+    position:relative;
+    width:100%;
+    height: auto;
+    top:0;
+    left:0;
+    border: none !important;;
+    margin-bottom: 10px;
+    /*box-shadow: none;*/
+}
 
 .bxslider, .bxslider li, .bxslider li, .bxslider .img-slider{
     width: 100%;
