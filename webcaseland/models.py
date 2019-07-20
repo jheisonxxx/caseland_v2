@@ -98,3 +98,23 @@ class CatalogProduct(models.Model):
         """ % self.image
 
     image_pic.allow_tags = True
+
+
+class Slider(models.Model):
+    name = models.CharField(max_length=250, verbose_name="Nombre")
+    image = models.ImageField(verbose_name="Imagen", upload_to='./images', blank=True, )
+    order = models.PositiveSmallIntegerField(default=0, verbose_name="Orden")
+
+    def __unicode__(self):
+        return self.name
+
+    def ba_image_pic(self):
+        return """
+            <img src="/media/%s" height="100">
+        """ % self.background
+    image.allow_tags = True
+
+    class Meta:
+        verbose_name = "Slider"
+        verbose_name_plural = "Sliders"
+        ordering = ('order', )

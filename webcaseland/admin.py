@@ -2,7 +2,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from webcaseland.models import Product, Category, SubCategory, CatalogProduct
+from webcaseland.models import Product, Category, SubCategory, CatalogProduct, Slider
 
 admin.site.site_header = 'Administración de Caseland'
 
@@ -50,3 +50,7 @@ class SubCategoryAdmin(admin.ModelAdmin):
     ordering = ('order',)
     inlines = [CatalogProductInline]
 
+admin.site.register(Slider)
+class SliderAdmin(admin.ModelAdmin):
+    list_display = ('name', 'image', 'order',)
+    list_editable = ('order',)

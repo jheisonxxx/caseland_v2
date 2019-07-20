@@ -62,7 +62,24 @@ body{
     -webkit-transform: scale(1.025);
     transform: scale(1.025);
     transition-duration: 0.5s;
+    background-color: white;
 }
+.body-caseland .category:hover{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.body-product{
+
+}
+
+
+.category:hover > .category-option{
+    padding-bottom: 1rem !important;
+}
+
 
 .category{
     /*padding-left: 1rem;*/
@@ -103,6 +120,7 @@ body{
     background-color: #04B7AF;
     color: white;
     text-decoration: none;
+    border: 1px solid #04B7AF;
 }
 
 
@@ -117,6 +135,7 @@ body{
     background-color: #04B7AF;
     color: white;
     text-decoration: none;
+    border: 1px solid #04B7AF;
 }
 
 .corner-fan{
@@ -301,6 +320,10 @@ body{
     font-weight: bold;
 }
 
+.pagination {
+   justify-content: center;
+}
+
 #header .dropdown-item{
     font-size: 0.8rem;
     padding-top: .9rem;
@@ -327,6 +350,12 @@ body{
     font-family: "Arial Black", arial-black;
 }
 
+
+.bxslider, .bxslider li, .bxslider li, .bxslider .img-slider{
+    width: 100%;
+    height: auto;
+}
+
 @media (max-width: 768px) {
     .carousel-inner .carousel-item > div {
         display: none;
@@ -344,10 +373,12 @@ body{
 
 .carousel-control-prev {
   margin-left: -25px;
+    z-index: 0;
 }
 
 .carousel-control-next {
   margin-right: -25px;
+    z-index: 0;
 }
 
 
@@ -483,6 +514,8 @@ body{
     .row-floating .whatsapp img{
         height: 40px;
     }
+
+
 }
 
 /*Medium devices (tablets, 768px and up)*/
@@ -491,10 +524,16 @@ body{
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) and (max-width: 1199px) {
+    .dropdown-menu{
+        min-width: 15rem;
+    }
 }
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
+    .dropdown-menu{
+        min-width: 15rem;
+    }
 }
 
 

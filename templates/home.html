@@ -3,6 +3,17 @@
 {% block content %}
     <div class="container body-caseland">
         <div class="row">
+            <div class="col-md-12 col-12 slider">
+                <ul class="bxslider">
+                    {% for slider in sliders %}
+                         <li>
+                        <img class="img-slider" src="{{ slider.image.url }}" alt="">
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-12 text-center py-4">
                 <h2 class="title-body">PERSONALIZADO DERC GVSDFDF TRGDGYNB</h2>
             </div>
@@ -39,7 +50,7 @@
                         <div class="col-12">
                             <div class="container text-center my-3">
                                 <div class="row mx-auto my-auto">
-                                    <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+                                    <div id="recipeCarousel1" class="carousel slide w-100" data-ride="carousel">
                                         <div class="carousel-inner w-100" role="listbox">
                                             {% for corner in cornerfan_list %}
                                                 {% if forloop.counter == 1 %}
@@ -55,13 +66,13 @@
                                             </a>
                                             {% endfor %}
                                         </div>
-                                        <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button"
+                                        <a class="carousel-control-prev w-auto" href="#recipeCarousel1" role="button"
                                            data-slide="prev">
-                                            <img src="{% static "img/arrow_left.png" %}"/>
+                                            <img src="{% static "img/arrow_left.png" %}" height="55"/>
                                         </a>
-                                        <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button"
+                                        <a class="carousel-control-next w-auto" href="#recipeCarousel1" role="button"
                                            data-slide="next">
-                                            <img src="{% static "img/arrow_rigth.png" %}"/>
+                                            <img src="{% static "img/arrow_rigth.png" %}" height="55"/>
                                         </a>
                                     </div>
                                 </div>
@@ -82,7 +93,7 @@
                     <div class="col-12">
                         <div class="container text-center my-3">
                             <div class="row mx-auto my-auto">
-                                <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+                                <div id="recipeCarousel2" class="carousel slide w-100" data-ride="carousel">
                                     <div class="carousel-inner w-100" role="listbox">
                                         {% for friki in friki_list %}
                                             {% if forloop.counter == 1 %}
@@ -98,13 +109,13 @@
                                         </a>
                                         {% endfor %}
                                     </div>
-                                    <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button"
+                                    <a class="carousel-control-prev w-auto" href="#recipeCarousel2" role="button"
                                        data-slide="prev">
-                                        <img src="{% static "img/arrow_left.png" %}"/>
+                                        <img src="{% static "img/arrow_left.png" %}" height="55"/>
                                     </a>
-                                    <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button"
+                                    <a class="carousel-control-next w-auto" href="#recipeCarousel2" role="button"
                                        data-slide="next">
-                                        <img src="{% static "img/arrow_rigth.png" %}"/>
+                                        <img src="{% static "img/arrow_rigth.png" %}" height="55"/>
                                     </a>
                                 </div>
                             </div>
@@ -124,7 +135,7 @@
                     <div class="col-12">
                         <div class="container text-center my-3">
                             <div class="row mx-auto my-auto">
-                                <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
+                                <div id="recipeCarousel3" class="carousel slide w-100" data-ride="carousel">
                                     <div class="carousel-inner w-100" role="listbox">
                                         {% for gift in gift_list %}
                                             {% if forloop.counter == 1 %}
@@ -140,13 +151,13 @@
                                         </a>
                                         {% endfor %}
                                     </div>
-                                    <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button"
+                                    <a class="carousel-control-prev w-auto" href="#recipeCarousel3" role="button"
                                        data-slide="prev">
-                                        <img src="{% static "img/arrow_left.png" %}"/>
+                                        <img src="{% static "img/arrow_left.png" %}" height="55"/>
                                     </a>
-                                    <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button"
+                                    <a class="carousel-control-next w-auto" href="#recipeCarousel3" role="button"
                                        data-slide="next">
-                                        <img src="{% static "img/arrow_rigth.png" %}"/>
+                                        <img src="{% static "img/arrow_rigth.png" %}" height="55"/>
                                     </a>
                                 </div>
                             </div>

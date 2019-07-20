@@ -4,7 +4,7 @@ from django.views.generic import DetailView, ListView
 from django.db.models import Q
 
 # Create your views here.
-from webcaseland.models import Product, Category, SubCategory, CatalogProduct
+from webcaseland.models import Product, Category, SubCategory, CatalogProduct, Slider
 
 
 def home(request):
@@ -20,12 +20,13 @@ def home(request):
     category_friki = Category.objects.filter(name__iexact='Zona friki').first()
     category_gift = Category.objects.filter(name__iexact='Regalos').first()
     category_promotion = Category.objects.filter(name__iexact='Promociones').first()
+    sliders = Slider.objects.all().order_by('order')
 
 
     # models = ModelPhone.objects.filter(visible=True).order_by('brand__order','order')
     # slides = Slide.objects.filter(visible=True)
 
-    return render_to_response('home.html', {'categories': categories, 'collections': collections,
+    return render_to_response('home.html', {'categories': categories, 'collections': collections, 'sliders': sliders,
                                             'cornerfan_list':corner_fan, 'friki_list': zona_friki,
                                             'gift_list': gifts,
                                             'category_fan': category_fan, 'category_friki': category_friki,
@@ -72,6 +73,7 @@ class CatalogProductDetailView(DetailView):
 class ProductListView(ListView):
     model = Category
     template_name = 'product.html'
+    paginate_by = 8
 
     def get_queryset(self):
         self.category = get_object_or_404(Category, id=self.args[0])
@@ -119,6 +121,7 @@ class SubCategoryListView(ListView):
 class CatalogProductListView(ListView):
     model = SubCategory
     template_name = 'catalog-product.html'
+    paginate_by = 8
 
     def get_queryset(self):
         self.subcategory = get_object_or_404(SubCategory, id=self.args[0])
