@@ -44,7 +44,7 @@
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               PERSONALIZAR
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -54,7 +54,7 @@
             </div>
           </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   COLECCIONES
               </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -64,7 +64,7 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   POR PRODUCTO
               </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -94,6 +94,22 @@
 </div>
 {% block content %}
 {% endblock %}
+<section class="chat-container">
+
+    <a href="https://api.whatsapp.com/send?phone=51910101718" class="wsp-button">
+        Contactar por Whatsapp
+    </a>
+    <div class="chat-button">
+        Contactar por facebook
+    </div>
+    <div class="chat-content">
+        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2FCaselandpe-122846441810069%2F&tabs=messages&width=340&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId"
+                height="500" width="100%" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                allowTransparency="true">
+        </iframe>
+    </div>
+</section>
+
 <div class="container-fluid footer-caseland d-none d-sm-none d-md-block d-lg-block d-xl-block">
     <div class="container">
         <div class="row py-4">
@@ -152,6 +168,11 @@ $(document).ready(function() {
     $('.bxslider').bxSlider({
         pager: false,
         auto: true
+    });
+
+    $(".chat-button").on('click', function (e) {
+        e.preventDefault();
+        $(".chat-content").slideToggle('fast');
     });
 });
 
