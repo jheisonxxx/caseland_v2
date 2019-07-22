@@ -25,14 +25,24 @@ body{
     background-color: #000000;
 }
 
-.body-product .category{
+.body-product .category, .body-product .catalog{
     background-color: white;
     background-clip: content-box;
 }
 
+
+
 .body-product .category .name-category{
     padding-left: 10px;
 }
+
+.body-product .catalog .catalog-name{
+    padding-left: 10px;
+}
+.body-product .catalog .catalog-price{
+    padding-right: 10px;
+}
+
 
 .title-body{
     font-size: 20px;
@@ -105,6 +115,10 @@ body{
 }
 
 .body-product .category{
+    padding-top: 1rem;
+}
+
+.body-product .catalog {
     padding-top: 1rem;
 }
 
@@ -508,9 +522,14 @@ body{
         display: none;
     }
      .navbar-dark .navbar-nav .nav-link {
-        margin-bottom: 17px;
-        margin-top: 17px;
+        margin-bottom: 15px;
+        margin-top: 15px;
     }
+
+     #header .dropdown-item {
+         padding-top: 1.2rem;
+         padding-bottom: 1.2rem;
+     }
 
 }
 
