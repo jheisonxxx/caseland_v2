@@ -49,14 +49,13 @@ class SubCategory(models.Model):
 
 @python_2_unicode_compatible
 class Product(models.Model):
-    code = models.CharField(max_length=30, verbose_name='código', unique=True)
     name = models.CharField(max_length=30, verbose_name='nombre')
     description = RichTextField(verbose_name='Descripcion', max_length=4000, blank=False)
     image = models.ImageField(blank=False, validators=[validate_image],verbose_name='imagen')
     order = models.PositiveIntegerField(verbose_name='orden', blank=False, default=1)
     visible = models.BooleanField(verbose_name='visible', blank=False, default=True)
-    category = models.ForeignKey(Category,verbose_name='categoria')
-    subcategory = models.ForeignKey(SubCategory, verbose_name='subcategoria')
+    category = models.ForeignKey(Category,verbose_name='categoria',blank=True, null=True)
+    subcategory = models.ForeignKey(SubCategory, verbose_name='subcategoria',blank=True, null=True)
     price = models.DecimalField(verbose_name='precio', blank=False, default=0, decimal_places=2, max_digits=10)
 
 

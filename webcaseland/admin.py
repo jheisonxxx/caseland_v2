@@ -8,7 +8,7 @@ admin.site.site_header = 'Administración de Caseland'
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('code', 'name', 'image_pic','category','subcategory', 'order', 'visible')
+    list_display = ('name', 'image_pic','category','subcategory', 'order', 'visible')
     list_editable = ('order', 'visible')
     ordering = ('category__order', 'order', )
 
