@@ -28,7 +28,7 @@
                         <div class="name-category text-center my-2">
                             {{ category.name }}
                         </div>
-                        <a href="{% url 'webcaseland:list_product' category.pk %}"
+                        <a href="{% url 'webcaseland:list_product' category.pk 'category' %}"
                        class="personalize text-center my-2 py-3 py-md-2 mx-4">
                         Personalizar
                         </a>
@@ -56,10 +56,10 @@
                                         <div class="carousel-inner w-100" role="listbox">
                                             {% for corner in cornerfan_list %}
                                                 {% if forloop.counter == 1 %}
-                                                    <a href="{% url 'webcaseland:list_catalog_product' corner.pk %}"
+                                                    <a href="{% url 'webcaseland:list_subcategory' corner.pk %}"
                                                        class="carousel-item active">
                                                 {% else %}
-                                                    <a href="{% url 'webcaseland:list_catalog_product' corner.pk %}"
+                                                    <a href="{% url 'webcaseland:list_subcategory' corner.pk %}"
                                                        class="carousel-item">
                                                 {% endif %}
                                             <div class="col-lg-3 col-md-3">
@@ -99,10 +99,10 @@
                                     <div class="carousel-inner w-100" role="listbox">
                                         {% for friki in friki_list %}
                                             {% if forloop.counter == 1 %}
-                                                <a href="{% url 'webcaseland:list_catalog_product' friki.pk %}"
+                                                <a href="{% url 'webcaseland:list_subcategory' friki.pk %}"
                                                    class="carousel-item active">
                                             {% else %}
-                                                <a href="{% url 'webcaseland:list_catalog_product' friki.pk %}"
+                                                <a href="{% url 'webcaseland:list_subcategory' friki.pk %}"
                                                    class="carousel-item">
                                             {% endif %}
                                         <div class="col-lg-3 col-md-3">
@@ -141,10 +141,10 @@
                                     <div class="carousel-inner w-100" role="listbox">
                                         {% for gift in gift_list %}
                                             {% if forloop.counter == 1 %}
-                                                <a href="{% url 'webcaseland:list_catalog_product' gift.pk %}"
+                                                <a href="{% url 'webcaseland:list_subcategory' gift.pk %}"
                                                    class="carousel-item active">
                                             {% else %}
-                                                <a href="{% url 'webcaseland:list_catalog_product' gift.pk %}"
+                                                <a href="{% url 'webcaseland:list_subcategory' gift.pk %}"
                                                    class="carousel-item">
                                             {% endif %}
                                         <div class="col-lg-3 col-md-3">

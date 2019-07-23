@@ -2,30 +2,19 @@
 from django.contrib import admin
 
 # Register your models here.
-from webcaseland.models import Product, Category, SubCategory, CatalogProduct, Slider
+from webcaseland.models import Product, Category, SubCategory, Slider
 
 admin.site.site_header = 'Administración de Caseland'
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('code', 'name', 'image_pic','category', 'order', 'visible')
+    list_display = ('code', 'name', 'image_pic','category','subcategory', 'order', 'visible')
     list_editable = ('order', 'visible')
     ordering = ('category__order', 'order', )
-
-@admin.register(CatalogProduct)
-class CatalogProductAdmin(admin.ModelAdmin):
-    list_display = ('code', 'name', 'image_pic','subcategory', 'order', 'visible')
-    list_editable = ('order', 'visible')
-    ordering = ('subcategory__order', 'order', )
 
 
 class ProductInline(admin.TabularInline):
     model = Product
-    extra = 0
-    ordering = ('order',)
-
-class CatalogProductInline(admin.TabularInline):
-    model = CatalogProduct
     extra = 0
     ordering = ('order',)
 
@@ -48,7 +37,7 @@ class SubCategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'order', 'visible')
     list_editable = ('order', 'visible')
     ordering = ('order',)
-    inlines = [CatalogProductInline]
+    inlines = [ProductInline]
 
 admin.site.register(Slider)
 class SliderAdmin(admin.ModelAdmin):

@@ -4,7 +4,7 @@ from django.views.generic import DetailView, ListView
 from django.db.models import Q
 
 # Create your views here.
-from webcaseland.models import Product, Category, SubCategory, CatalogProduct, Slider
+from webcaseland.models import Product, Category, SubCategory, Slider
 
 
 def home(request):
@@ -51,23 +51,6 @@ class ProductDetailView(DetailView):
 
         return context
 
-class CatalogProductDetailView(DetailView):
-    model = CatalogProduct
-    template_name = 'detail-product.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(CatalogProductDetailView, self).get_context_data(**kwargs)
-        context['categories'] = Category.objects.filter(visible=True).exclude(name__iexact='Rincon del Hincha') \
-            .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').exclude(name__iexact='Promociones').order_by('order')
-        context['collections'] = Category.objects.filter(Q(visible=True) & (Q(name__iexact='Rincon del Hincha') |
-                                                                            Q(name__iexact='Regalos') |
-                                                                            Q(name__iexact='Zona friki')))
-        context['category_fan'] = Category.objects.filter(name__iexact='Rincon del Hincha').first()
-        context['category_friki'] = Category.objects.filter(name__iexact='Zona friki').first()
-        context['category_gift'] = Category.objects.filter(name__iexact='Regalos').first()
-        context['category_promotion'] = Category.objects.filter(name__iexact='Promociones').first()
-
-        return context
 
 
 class ProductListView(ListView):
@@ -76,8 +59,30 @@ class ProductListView(ListView):
     paginate_by = 8
 
     def get_queryset(self):
-        self.category = get_object_or_404(Category, id=self.args[0])
-        return Product.objects.filter(category=self.category, visible=True)
+        type = self.kwargs['type']
+        id = self.kwargs['id']
+        if type=='category':
+            category = get_object_or_404(Category, id=id)
+            return Product.objects.filter(category=category, visible=True)
+        elif type=='subcategory':
+            category = get_object_or_404(Category, id=id)
+            return SubCategory.objects.filter(category=category, visible=True)
+        elif type == 'subcategory_catalog':
+            subcategory = get_object_or_404(SubCategory, id=id)
+            return Product.objects.filter(subcategory=subcategory, visible=True)
+
+
+    def get_template_names(self):
+
+        type = self.kwargs['type']
+
+        if type == 'category':
+            return ['product.html']
+        elif type == 'subcategory_catalog':
+            return ['catalog-product.html']
+        elif type == 'subcategory':
+            return ['subcategory-product.html']
+
 
     def get_context_data(self, **kwargs):
         context = super(ProductListView, self).get_context_data(**kwargs)
@@ -105,30 +110,6 @@ class SubCategoryListView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super(SubCategoryListView, self).get_context_data(**kwargs)
-        context['categories'] = Category.objects.filter(visible=True).exclude(name__iexact='Rincon del Hincha') \
-            .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').exclude(name__iexact='Promociones').order_by('order')
-        context['collections'] = Category.objects.filter(Q(visible=True) & (Q(name__iexact='Rincon del Hincha') |
-                                                                            Q(name__iexact='Regalos') |
-                                                                            Q(name__iexact='Zona friki')))
-
-        context['category_fan'] = Category.objects.filter(name__iexact='Rincon del Hincha').first()
-        context['category_friki'] = Category.objects.filter(name__iexact='Zona friki').first()
-        context['category_gift'] = Category.objects.filter(name__iexact='Regalos').first()
-        context['category_promotion'] = Category.objects.filter(name__iexact='Promociones').first()
-
-        return context
-
-class CatalogProductListView(ListView):
-    model = SubCategory
-    template_name = 'catalog-product.html'
-    paginate_by = 8
-
-    def get_queryset(self):
-        self.subcategory = get_object_or_404(SubCategory, id=self.args[0])
-        return CatalogProduct.objects.filter(subcategory=self.subcategory, visible=True)
-
-    def get_context_data(self, **kwargs):
-        context = super(CatalogProductListView, self).get_context_data(**kwargs)
         context['categories'] = Category.objects.filter(visible=True).exclude(name__iexact='Rincon del Hincha') \
             .exclude(name__iexact='Zona friki').exclude(name__iexact='Regalos').exclude(name__iexact='Promociones').order_by('order')
         context['collections'] = Category.objects.filter(Q(visible=True) & (Q(name__iexact='Rincon del Hincha') |

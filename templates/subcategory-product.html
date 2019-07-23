@@ -4,7 +4,8 @@
 <div class="container body-product py-5">
     <div class="row mb-4">
         {% for object in object_list %}
-            <a href="{% url 'webcaseland:list_catalog_product' object.pk %}" class="col-md-4 col-6 category">
+
+            <a href="{% url 'webcaseland:list_product' object.pk 'subcategory_catalog' %}" class="col-md-4 col-6 category">
                     <img src="{{ object.image.url }}" alt="" width="100%" height="auto">
                     <div class="name-category my-3">
                         {{ object.name }}

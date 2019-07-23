@@ -56,38 +56,13 @@ class Product(models.Model):
     order = models.PositiveIntegerField(verbose_name='orden', blank=False, default=1)
     visible = models.BooleanField(verbose_name='visible', blank=False, default=True)
     category = models.ForeignKey(Category,verbose_name='categoria')
+    subcategory = models.ForeignKey(SubCategory, verbose_name='subcategoria')
     price = models.DecimalField(verbose_name='precio', blank=False, default=0, decimal_places=2, max_digits=10)
 
 
     class Meta:
         verbose_name = "Producto"
         verbose_name_plural = "Productos"
-
-    def __str__(self):
-        return self.name
-
-    def image_pic(self):
-        return """
-            <img src="/media/%s" width="100">
-        """ % self.image
-
-    image_pic.allow_tags = True
-
-@python_2_unicode_compatible
-class CatalogProduct(models.Model):
-    code = models.CharField(max_length=30, verbose_name='código', unique=True)
-    name = models.CharField(max_length=30, verbose_name='nombre')
-    description = RichTextField(verbose_name='Descripcion', max_length=4000, blank=False)
-    image = models.ImageField(blank=False, validators=[validate_image],verbose_name='imagen')
-    order = models.PositiveIntegerField(verbose_name='orden', blank=False, default=1)
-    visible = models.BooleanField(verbose_name='visible', blank=False, default=True)
-    subcategory = models.ForeignKey(SubCategory,verbose_name='subcategoria')
-    price = models.DecimalField(verbose_name='precio', blank=False, default=0, decimal_places=2,max_digits=10)
-
-
-    class Meta:
-        verbose_name = "Producto de Catalogo o Colección"
-        verbose_name_plural = "Productos de Catalogo o Colecciones"
 
     def __str__(self):
         return self.name
