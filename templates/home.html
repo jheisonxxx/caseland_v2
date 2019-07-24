@@ -56,10 +56,10 @@
                                         <div class="carousel-inner w-100" role="listbox">
                                             {% for corner in cornerfan_list %}
                                                 {% if forloop.counter == 1 %}
-                                                    <a href="{% url 'webcaseland:list_subcategory' corner.pk %}"
+                                                    <a href="{% url 'webcaseland:list_product' corner.pk 'subcategory_catalog' %}"
                                                        class="carousel-item active">
                                                 {% else %}
-                                                    <a href="{% url 'webcaseland:list_subcategory' corner.pk %}"
+                                                    <a href="{% url 'webcaseland:list_product' corner.pk 'subcategory_catalog' %}"
                                                        class="carousel-item">
                                                 {% endif %}
                                             <div class="col-lg-3 col-md-3">
@@ -99,10 +99,10 @@
                                     <div class="carousel-inner w-100" role="listbox">
                                         {% for friki in friki_list %}
                                             {% if forloop.counter == 1 %}
-                                                <a href="{% url 'webcaseland:list_subcategory' friki.pk %}"
+                                                <a href="{% url 'webcaseland:list_product' friki.pk 'subcategory_catalog' %}"
                                                    class="carousel-item active">
                                             {% else %}
-                                                <a href="{% url 'webcaseland:list_subcategory' friki.pk %}"
+                                                <a href="{% url 'webcaseland:list_product' friki.pk 'subcategory_catalog' %}"
                                                    class="carousel-item">
                                             {% endif %}
                                         <div class="col-lg-3 col-md-3">
@@ -141,10 +141,10 @@
                                     <div class="carousel-inner w-100" role="listbox">
                                         {% for gift in gift_list %}
                                             {% if forloop.counter == 1 %}
-                                                <a href="{% url 'webcaseland:list_subcategory' gift.pk %}"
+                                                <a href="{% url 'webcaseland:list_product' gift.pk 'subcategory_catalog' %}"
                                                    class="carousel-item active">
                                             {% else %}
-                                                <a href="{% url 'webcaseland:list_subcategory' gift.pk %}"
+                                                <a href="{% url 'webcaseland:list_product' gift.pk 'subcategory_catalog' %}"
                                                    class="carousel-item">
                                             {% endif %}
                                         <div class="col-lg-3 col-md-3">
