@@ -56,16 +56,16 @@
                                         <div class="carousel-inner w-100" role="listbox">
                                             {% for corner in cornerfan_list %}
                                                 {% if forloop.counter == 1 %}
-                                                    <a href="{% url 'webcaseland:list_product' corner.pk 'subcategory_catalog' %}"
-                                                       class="carousel-item active">
+                                                    <div class="carousel-item active">
                                                 {% else %}
-                                                    <a href="{% url 'webcaseland:list_product' corner.pk 'subcategory_catalog' %}"
-                                                       class="carousel-item">
+                                                    <div class="carousel-item">
                                                 {% endif %}
                                             <div class="col-lg-3 col-md-3">
-                                                <img class="img-fluid" src="{{ corner.image.url }}">
+                                                <a href="{% url 'webcaseland:list_product' corner.pk 'subcategory_catalog' %}">
+                                                    <img class="img-fluid" src="{{ corner.image.url }}">
+                                                </a>
                                             </div>
-                                            </a>
+                                            </div>
                                             {% endfor %}
                                         </div>
                                         <a class="carousel-control-prev w-auto" href="#recipeCarousel1" role="button"
@@ -99,16 +99,16 @@
                                     <div class="carousel-inner w-100" role="listbox">
                                         {% for friki in friki_list %}
                                             {% if forloop.counter == 1 %}
-                                                <a href="{% url 'webcaseland:list_product' friki.pk 'subcategory_catalog' %}"
-                                                   class="carousel-item active">
+                                                <div class="carousel-item active">
                                             {% else %}
-                                                <a href="{% url 'webcaseland:list_product' friki.pk 'subcategory_catalog' %}"
-                                                   class="carousel-item">
+                                                <div class="carousel-item">
                                             {% endif %}
                                         <div class="col-lg-3 col-md-3">
-                                            <img class="img-fluid" src="{{ friki.image.url }}">
+                                            <a href="{% url 'webcaseland:list_product' friki.pk 'subcategory_catalog' %}">
+                                                <img class="img-fluid" src="{{ friki.image.url }}">
+                                            </a>
                                         </div>
-                                        </a>
+                                        </div>
                                         {% endfor %}
                                     </div>
                                     <a class="carousel-control-prev w-auto" href="#recipeCarousel2" role="button"
@@ -141,16 +141,16 @@
                                     <div class="carousel-inner w-100" role="listbox">
                                         {% for gift in gift_list %}
                                             {% if forloop.counter == 1 %}
-                                                <a href="{% url 'webcaseland:list_product' gift.pk 'subcategory_catalog' %}"
-                                                   class="carousel-item active">
+                                                <div class="carousel-item active">
                                             {% else %}
-                                                <a href="{% url 'webcaseland:list_product' gift.pk 'subcategory_catalog' %}"
-                                                   class="carousel-item">
+                                                <div class="carousel-item">
                                             {% endif %}
                                         <div class="col-lg-3 col-md-3">
-                                            <img class="img-fluid" src="{{ gift.image.url }}">
+                                            <a href="{% url 'webcaseland:list_product' gift.pk 'subcategory_catalog' %}">
+                                                <img class="img-fluid" src="{{ gift.image.url }}">
+                                            </a>
                                         </div>
-                                        </a>
+                                        </div>
                                         {% endfor %}
                                     </div>
                                     <a class="carousel-control-prev w-auto" href="#recipeCarousel3" role="button"
