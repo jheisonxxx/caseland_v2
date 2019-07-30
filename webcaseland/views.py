@@ -56,7 +56,7 @@ class ProductDetailView(DetailView):
 class ProductListView(ListView):
     model = Category
     template_name = 'product.html'
-    paginate_by = 8
+    paginate_by = 40
 
     def get_queryset(self):
         type = self.kwargs['type']
