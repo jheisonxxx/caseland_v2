@@ -567,6 +567,12 @@ body{
          font-size: 0.70rem !important;
      }
 
+     .catalog-price{
+         position: absolute;
+         bottom: 0;
+         right: 0;
+     }
+
 }
 
 /*Small devices (landscape phones, 576px and up)*/
