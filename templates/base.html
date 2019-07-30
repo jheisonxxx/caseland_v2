@@ -65,7 +65,7 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  POR PRODUCTO
+                  CATÁLOGO
               </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                     {% for category in categories %}
@@ -78,13 +78,13 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'webcaseland:list_subcategory' category_fan.pk %}">RINCON DEL HINCHA</a>
-            </li>
-              <li class="nav-item">
-              <a class="nav-link" href="{% url 'webcaseland:list_subcategory' category_gift.pk %}">REGALOS</a>
-            </li>
-              <li class="nav-item">
-              <a class="nav-link" href="{% url 'webcaseland:list_subcategory' category_promotion.pk %}">PROMOCIONES</a>
-            </li>
+{#            </li>#}
+{#              <li class="nav-item">#}
+{#              <a class="nav-link" href="{% url 'webcaseland:list_subcategory' category_gift.pk %}">REGALOS</a>#}
+{#            </li>#}
+{#              <li class="nav-item">#}
+{#              <a class="nav-link" href="{% url 'webcaseland:list_subcategory' category_promotion.pk %}">PROMOCIONES</a>#}
+{#            </li>#}
           </ul>
         </div>
     </nav>
