@@ -565,6 +565,7 @@ body{
 
      .body-product .catalog .catalog-name {
          font-size: 0.70rem !important;
+         height: 25px;
      }
 
      .catalog-price{
