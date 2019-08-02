@@ -38,6 +38,8 @@ body{
 
 .body-product .catalog .catalog-name{
     padding-left: 10px;
+    height: 40px;
+    line-height: 1.3;
 }
 .body-product .catalog .catalog-price{
     padding-right: 10px;
@@ -46,12 +48,12 @@ body{
 
 .title-body{
     /*font-size: 6vw;*/
-    font-size: 32px;
+    font-size: 25px;
     font-weight: bold;
 }
 .choose-design{
     /*font-size: 2.3vw;*/
-    font-size: 15px;
+    font-size: 19px;
     letter-spacing: 3px;
 }
 
@@ -273,6 +275,7 @@ body{
     background-color: #000000;
     color: white;
     font-size: 12px;
+
 }
 
 .footer-caseland img{
@@ -532,11 +535,26 @@ body{
 
 /* Portrait phones and smaller */
 @media (max-width: 575px) {
+
+    .title-body{
+    /*font-size: 6vw;*/
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .choose-design{
+        /*font-size: 2.3vw;*/
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+    .footer-logo{
+        height: 60px;
+    }
+
     .white-social img{
-        height: 30px;
+        height: 20px;
     }
     .margin-logo{
-        height: 40px;
+        height: 60px;
     }
     .category{
         padding-left: .5rem;
@@ -564,8 +582,9 @@ body{
      }
 
      .body-product .catalog .catalog-name {
-         font-size: 0.70rem !important;
-         height: 25px;
+         font-size: 0.9rem !important;
+         height: 32px;
+         line-height: 1.2;
      }
 
      .catalog-price{
@@ -584,7 +603,7 @@ body{
         height: 40px;
     }
     .margin-logo{
-        height: 45px;
+        height: 60px;
     }
 
 
