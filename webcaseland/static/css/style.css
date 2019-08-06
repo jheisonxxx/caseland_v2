@@ -442,6 +442,8 @@ body{
     z-index: 1500;
 }
 
+
+
 /*Chat de Facebook*/
 
 .chat-container {
@@ -498,6 +500,12 @@ body{
     background-color: #fff;
 }
 
+.text-modal{
+     float: left;
+     position: absolute;
+     bottom: 0;
+}
+
 @media (max-width: 768px) {
     .carousel-inner .carousel-item > div {
         display: none;
@@ -506,29 +514,14 @@ body{
         display: block;
     }
 
-    .modal-dialog {
-        position: absolute;
-        width: 100% !important;
-        max-width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 0;
-        padding-left: 0;
-        padding-right: 0;
-        bottom: 60px;
-    }
-
-    .modal-content {
-      border-radius: 0 !important;
-    }
 
     .buy-web{
         padding-left: 2rem;
         padding-right: 2rem;
     }
     .contact-web{
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
     }
 }
 
@@ -615,6 +608,28 @@ body{
 }
 
 @media (max-width: 992px) {
+
+    .modal-dialog {
+        position: absolute;
+        width: 100% !important;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        height: calc(100% - 60px);
+        bottom: 60px;
+    }
+
+    .modal-content {
+        height: 100%;
+        border-radius: 0 !important;
+    }
+    .modal-header {
+        /*height: 10%*/
+    }
+
     .navbar-dark .navbar-nav .nav-link{
         border-left: none;
 
@@ -706,6 +721,7 @@ body{
 
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) and (max-width: 991px) {
+
 }
 
 /*Large devices (desktops, 992px and up)*/
@@ -713,12 +729,20 @@ body{
     .dropdown-menu{
         min-width: 15rem;
     }
+    .text-modal{
+        float: none;
+        position: inherit;
+    }
 }
 
 /*Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {
     .dropdown-menu{
         min-width: 15rem;
+    }
+    .text-modal{
+        float: none;
+        position: inherit;
     }
 }
 

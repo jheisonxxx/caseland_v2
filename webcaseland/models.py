@@ -32,6 +32,18 @@ class Category(models.Model):
 
 
 @python_2_unicode_compatible
+class Collection(Category):
+
+    class Meta:
+        proxy = True
+        verbose_name = "Colección"
+        verbose_name_plural = "Colecciones"
+
+    def __str__(self):
+        return self.name
+
+
+@python_2_unicode_compatible
 class SubCategory(models.Model):
     name = models.CharField(verbose_name="Nombre", max_length=255, blank=False, unique=False)
     image = models.ImageField(blank=False, validators=[validate_image], verbose_name='imagen')
